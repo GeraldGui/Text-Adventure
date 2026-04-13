@@ -53,59 +53,8 @@ public class Main {
                         System.out.println("Now time to pick the room!\nRoom 1 (Needs 4M)\nRoom 2 (Needs 2M)\nRoom 3 (Needs 1M)");
                         room = myObj.nextLine();
 
-                        // User picked room 1 and has enough movement
-                        if (room.equalsIgnoreCase("room 1") && movement == 4) {
-                            demon_health = 1;
-                            demon_damage = 2;
+                        roomsForSword();
 
-                            System.out.println("You have entered Room 1, but now you have encountered a DEMON!\nDemon Stats\n" + demon_health + "\n" + demon_damage);
-
-                            System.out.println("Will you attack? Yes or no?\nYour damage: " + damage);
-                            attack = myObj.nextLine();
-
-                            if (attack.equalsIgnoreCase("yes")) {
-                                demon_health -= damage;
-
-                                System.out.println("Nice, you slashed that demon\nDemon Health: " + demon_health);
-
-                                while (demon_health > 1) {
-                                    System.out.println("Oh, you didn't kill it\nDemon attacks back!");
-
-                                    health -= demon_damage;
-
-                                    System.out.println(player + "Health: " + health + "\nDemon Health: " + demon_health);
-
-                                    System.out.println("Will you attack? Yes or no?\nYour damage: " + damage);
-                                    attack = myObj.nextLine();
-                                }
-
-                                if (demon_health == 0) {
-                                    System.out.println("WOW, you could actually kill it!");
-
-                                }
-
-                            } else if (attack.equalsIgnoreCase("no")) {
-                                System.out.println("Then why did you start your adventure? Go home!");
-                                return;
-                            }
-
-                        }
-                        // User picked room 2 and has enough movement
-                        else if (room.equalsIgnoreCase("room 2") && movement == 2) {
-                            demon_health = 3;
-                            demon_damage = 2;
-
-                            System.out.println("You have entered Room 1, but now you have encountered a DEMON!\nDemon Stats\n" + demon_health + "\n" + demon_damage);
-
-                        }
-                        // User picked room 3 and has enough movement
-                        else if (room.equalsIgnoreCase("room 3") && movement == 4) {
-                            demon_health = 2;
-                            demon_damage = 2;
-
-                            System.out.println("You have entered Room 1, but now you have encountered a DEMON!\nDemon Stats\n" + demon_health + "\n" + demon_damage);
-
-                        }
                     }
                 }
 
@@ -120,30 +69,8 @@ public class Main {
                         System.out.println("Now time to pick the room!\nRoom 1 (Needs 4M)\nRoom 2 (Needs 2M)\nRoom 3 (Needs 1M)");
                         room = myObj.nextLine();
 
-                        // User picked room 1 and has enough movement
-                        if (room.equalsIgnoreCase("room 1") && movement == 4) {
-                            demon_health = 1;
-                            demon_damage = 2;
+                        roomsForSpear();
 
-                            System.out.println("You have entered Room 1, but now you have encountered a DEMON!\nDemon Stats\n" + demon_health + "\n" + demon_damage);
-
-                        }
-                        // User picked room 2 and has enough movement
-                        else if (room.equalsIgnoreCase("room 2") && movement == 2) {
-                            demon_health = 3;
-                            demon_damage = 2;
-
-                            System.out.println("You have entered Room 1, but now you have encountered a DEMON!\nDemon Stats\n" + demon_health + "\n" + demon_damage);
-
-                        }
-                        // User picked room 3 and has enough movement
-                        else if (room.equalsIgnoreCase("room 3") && movement == 4) {
-                            demon_health = 2;
-                            demon_damage = 2;
-
-                            System.out.println("You have entered Room 1, but now you have encountered a DEMON!\nDemon Stats\n" + demon_health + "\n" + demon_damage);
-
-                        }
                     }
                 }
 
@@ -154,34 +81,12 @@ public class Main {
 
                     System.out.println("So you like going on a Rampage, well then here are your Stats Adventure!\nHealth: " + health + "\nDamage: " + damage + "\nMovement: " + movement + "\nInventory: " + inventory);
 
-                    while (weapon.equalsIgnoreCase("Axe")) {
+                    while (weapon.equalsIgnoreCase("axe")) {
                         System.out.println("Now time to pick the room!\nRoom 1 (Needs 4M)\nRoom 2 (Needs 2M)\nRoom 3 (Needs 1M)");
                         room = myObj.nextLine();
 
-                        // User picked room 1 and has enough movement
-                        if (room.equalsIgnoreCase("room 1") && movement == 4) {
-                            demon_health = 1;
-                            demon_damage = 2;
+                        roomsForAxe();
 
-                            System.out.println("You have entered Room 1, but now you have encountered a DEMON!\nDemon Stats\n" + demon_health + "\n" + demon_damage);
-
-                        }
-                        // User picked room 2 and has enough movement
-                        else if (room.equalsIgnoreCase("room 2") && movement == 2) {
-                            demon_health = 3;
-                            demon_damage = 2;
-
-                            System.out.println("You have entered Room 1, but now you have encountered a DEMON!\nDemon Stats\n" + demon_health + "\n" + demon_damage);
-
-                        }
-                        // User picked room 3 and has enough movement
-                        else if (room.equalsIgnoreCase("room 3") && movement == 4) {
-                            demon_health = 2;
-                            demon_damage = 2;
-
-                            System.out.println("You have entered Room 1, but now you have encountered a DEMON!\nDemon Stats\n" + demon_health + "\n" + demon_damage);
-
-                        }
                     }
                 }
 
@@ -195,10 +100,354 @@ public class Main {
                         System.out.println("Now time to pick the room!\nRoom 1 (Needs 4M)\nRoom 2 (Needs 2M)\nRoom 3 (Needs 1M)");
                         room = myObj.nextLine();
 
-                        // User picked room 1 and has enough movement
+                        roomsForStick();
+
+                        }
+                    }
+                }
+
+                // If user types defeat/Defeat it will quit the game
+                else if (starting.equalsIgnoreCase("defeat".toLowerCase())) {
+                    System.out.println("You're Defeated Before You Even Started!");
+
+                    return;
+
+                }
+
+                // Tells the user they put the wrong input so it will send them back
+                else {
+                    System.out.println("You put invalid text!");
+                }
+
+            }
+            myObj.close();
+        }
+
+        public static void roomsForSword() {
+
+            // User picked room 1 and has enough movement
+            if (room.equalsIgnoreCase("room 1") && movement >= 4) {
+                demon_health = 1;
+                demon_damage = 2;
+
+                System.out.println("You have entered Room 1, but now you have encountered a DEMON!\nDemon Stats\n" + demon_health + "\n" + demon_damage);
+
+                System.out.println("Will you attack? Yes or no?\nYour damage: " + damage);
+                attack = myObj.nextLine();
+
+                if (attack.equalsIgnoreCase("yes")) {
+                    demon_health -= damage;
+
+                    System.out.println("Nice, you slashed that demon\nDemon Health: " + demon_health);
+
+                    while (demon_health > 1) {
+                        System.out.println("Oh, you didn't kill it\nDemon attacks back!");
+
+                        health -= demon_damage;
+
+                        System.out.println(player + "Health: " + health + "\nDemon Health: " + demon_health);
+
+                        System.out.println("Will you attack? Yes or no?\nYour damage: " + damage);
+                        attack = myObj.nextLine();
+
+                        demon_health -= damage;
+                    }
+
+                    if (demon_health == 0) {
+                        System.out.println("WOW, you could actually kill it!");
+
+                        System.out.println("Now time to pick the next room!\nRoom 1 (Needs 4M)\nRoom 2 (Needs 2M)\nRoom 3 (Needs 1M)");
+                        room = myObj.nextLine();
+
                         if (room.equalsIgnoreCase("room 1") && movement == 4) {
-                            demon_health = 1;
-                            demon_damage = 2;
+                            demon_health = 4;
+                            demon_damage = 3;
+
+                            System.out.println("You have entered Room 1, but now you have encountered a DEMON!\nDemon Stats\n" + demon_health + "\n" + demon_damage);
+
+                            System.out.println("Will you attack? Yes or no?\nYour damage: " + damage);
+                            attack = myObj.nextLine();
+
+                            if (attack.equalsIgnoreCase("yes")) {
+                                demon_health -= damage;
+
+                                System.out.println("Nice, you slash that demon\nDemon Health: " + demon_health);
+
+                                while (demon_health > 1) {
+                                    System.out.println("Oh, you didn't kill it\nDemon attacks back!");
+
+                                    health -= demon_damage;
+
+                                    System.out.println(player + "Health: " + health + "\nDemon Health: " + demon_health);
+
+                                    System.out.println("Will you attack? Yes or no?\nYour damage: " + damage);
+                                    attack = myObj.nextLine();
+
+                                    demon_health -= damage;
+                                }
+
+                                if (demon_health <= 0) {
+                                    System.out.println("You win!");
+                                    return;
+                                }
+                            }
+                        }
+                    }
+
+                } else if (attack.equalsIgnoreCase("no")) {
+                    System.out.println("Then why did you start your adventure? Go home!");
+                    return;
+                }
+            }
+            else if (room.equalsIgnoreCase("room 2") && movement == 2) {
+                demon_health = 3;
+                demon_damage = 2;
+
+                System.out.println("You have entered Room 2, but now you have encountered a DEMON!\nDemon Stats\n" + demon_health + "\n" + demon_damage);
+
+            }
+            // User picked room 3 and has enough movement
+            else if (room.equalsIgnoreCase("room 3") && movement == 4) {
+                demon_health = 2;
+                demon_damage = 2;
+
+                System.out.println("You have entered Room 3, but now you have encountered a DEMON!\nDemon Stats\n" + demon_health + "\n" + demon_damage);
+
+            }
+        }
+
+        public static void roomsForSpear() {
+
+            // User picked room 1 and has enough movement
+            if (room.equalsIgnoreCase("room 1") && movement >= 4) {
+                demon_health = 1;
+                demon_damage = 2;
+
+                System.out.println("You have entered Room 1, but now you have encountered a DEMON!\nDemon Stats\n" + demon_health + "\n" + demon_damage);
+
+                System.out.println("Will you attack? Yes or no?\nYour damage: " + damage);
+                attack = myObj.nextLine();
+
+                if (attack.equalsIgnoreCase("yes")) {
+                    demon_health -= damage;
+
+                    System.out.println("Nice, you stabbed that demon\nDemon Health: " + demon_health);
+
+                    while (demon_health > 1) {
+                        System.out.println("Oh, you didn't kill it\nDemon attacks back!");
+
+                        health -= demon_damage;
+
+                        System.out.println(player + "Health: " + health + "\nDemon Health: " + demon_health);
+
+                        System.out.println("Will you attack? Yes or no?\nYour damage: " + damage);
+                        attack = myObj.nextLine();
+
+                        demon_health -= damage;
+                    }
+
+                    if (demon_health == 0) {
+                        System.out.println("WOW, you could actually kill it!");
+
+                        System.out.println("Now time to pick the next room!\nRoom 1 (Needs 4M)\nRoom 2 (Needs 2M)\nRoom 3 (Needs 1M)");
+                        room = myObj.nextLine();
+
+                        if (room.equalsIgnoreCase("room 1") && movement == 4) {
+                            demon_health = 4;
+                            demon_damage = 3;
+
+                            System.out.println("You have entered Room 1, but now you have encountered a DEMON!\nDemon Stats\n" + demon_health + "\n" + demon_damage);
+
+                            System.out.println("Will you attack? Yes or no?\nYour damage: " + damage);
+                            attack = myObj.nextLine();
+
+                            if (attack.equalsIgnoreCase("yes")) {
+                                demon_health -= damage;
+
+                                System.out.println("Nice, you stabbed that demon\nDemon Health: " + demon_health);
+
+                                while (demon_health > 1) {
+                                    System.out.println("Oh, you didn't kill it\nDemon attacks back!");
+
+                                    health -= demon_damage;
+
+                                    System.out.println(player + "Health: " + health + "\nDemon Health: " + demon_health);
+
+                                    System.out.println("Will you attack? Yes or no?\nYour damage: " + damage);
+                                    attack = myObj.nextLine();
+
+                                    demon_health -= damage;
+                                }
+
+                                if (demon_health <= 0) {
+                                    System.out.println("You win!");
+                                    return;
+                                }
+                            }
+                        }
+                    }
+
+                } else if (attack.equalsIgnoreCase("no")) {
+                    System.out.println("Then why did you start your adventure? Go home!");
+                    return;
+                }
+
+            }
+            else if (room.equalsIgnoreCase("room 2") && movement == 2) {
+                demon_health = 3;
+                demon_damage = 2;
+
+                System.out.println("You have entered Room 2, but now you have encountered a DEMON!\nDemon Stats\n" + demon_health + "\n" + demon_damage);
+
+            }
+            // User picked room 3 and has enough movement
+            else if (room.equalsIgnoreCase("room 3") && movement == 4) {
+                demon_health = 2;
+                demon_damage = 2;
+
+                System.out.println("You have entered Room 3, but now you have encountered a DEMON!\nDemon Stats\n" + demon_health + "\n" + demon_damage);
+
+            }
+        }
+
+        public static void roomsForAxe() {
+
+            // User picked room 1 and has enough movement
+            if (room.equalsIgnoreCase("room 1") && movement >= 4) {
+                demon_health = 1;
+                demon_damage = 2;
+
+                System.out.println("You have entered Room 1, but now you have encountered a DEMON!\nDemon Stats\n" + demon_health + "\n" + demon_damage);
+
+                System.out.println("Will you attack? Yes or no?\nYour damage: " + damage);
+                attack = myObj.nextLine();
+
+                if (attack.equalsIgnoreCase("yes")) {
+                    demon_health -= damage;
+
+                    System.out.println("Nice, you split that demon\nDemon Health: " + demon_health);
+
+                    while (demon_health > 1) {
+                        System.out.println("Oh, you didn't kill it\nDemon attacks back!");
+
+                        health -= demon_damage;
+
+                        System.out.println(player + "Health: " + health + "\nDemon Health: " + demon_health);
+
+                        System.out.println("Will you attack? Yes or no?\nYour damage: " + damage);
+                        attack = myObj.nextLine();
+
+                        demon_health -= damage;
+                    }
+
+                    if (demon_health == 0) {
+                        System.out.println("WOW, you could actually kill it!");
+
+                        System.out.println("Now time to pick the next room!\nRoom 1 (Needs 4M)\nRoom 2 (Needs 2M)\nRoom 3 (Needs 1M)");
+                        room = myObj.nextLine();
+
+                        if (room.equalsIgnoreCase("room 1") && movement == 4) {
+                            demon_health = 4;
+                            demon_damage = 3;
+
+                            System.out.println("You have entered Room 1, but now you have encountered a DEMON!\nDemon Stats\n" + demon_health + "\n" + demon_damage);
+
+                            System.out.println("Will you attack? Yes or no?\nYour damage: " + damage);
+                            attack = myObj.nextLine();
+
+                            if (attack.equalsIgnoreCase("yes")) {
+                                demon_health -= damage;
+
+                                System.out.println("Nice, you split that demon\nDemon Health: " + demon_health);
+
+                                while (demon_health > 1) {
+                                    System.out.println("Oh, you didn't kill it\nDemon attacks back!");
+
+                                    health -= demon_damage;
+
+                                    System.out.println(player + "Health: " + health + "\nDemon Health: " + demon_health);
+
+                                    System.out.println("Will you attack? Yes or no?\nYour damage: " + damage);
+                                    attack = myObj.nextLine();
+
+                                    demon_health -= damage;
+                                }
+
+                                if (demon_health <= 0) {
+                                    System.out.println("You win!");
+                                    return;
+                                }
+                            }
+                        }
+                    }
+
+                } else if (attack.equalsIgnoreCase("no")) {
+                    System.out.println("Then why did you start your adventure? Go home!");
+                    return;
+                }
+
+            }
+            else if (room.equalsIgnoreCase("room 2") && movement == 2) {
+                demon_health = 3;
+                demon_damage = 2;
+
+                System.out.println("You have entered Room 2, but now you have encountered a DEMON!\nDemon Stats\n" + demon_health + "\n" + demon_damage);
+
+            }
+            // User picked room 3 and has enough movement
+            else if (room.equalsIgnoreCase("room 3") && movement == 4) {
+                demon_health = 2;
+                demon_damage = 2;
+
+                System.out.println("You have entered Room 3, but now you have encountered a DEMON!\nDemon Stats\n" + demon_health + "\n" + demon_damage);
+
+            }
+        }
+
+        public static void roomsForStick() {
+
+            // User picked room 1 and has enough movement
+            if (room.equalsIgnoreCase("room 1") && movement >= 4) {
+                demon_health = 3;
+                demon_damage = 1;
+
+                System.out.println("You have entered Room 1, but now you have encountered a DEMON!\nDemon Stats\n" + demon_health + "\n" + demon_damage);
+
+                System.out.println("Will you attack? Yes or no?\nYour damage: " + damage);
+                attack = myObj.nextLine();
+
+                if (attack.equalsIgnoreCase("yes")) {
+                    demon_health -= damage;
+
+                    System.out.println("Nice, you bonked that demon\nDemon Health: " + demon_health);
+
+                    while (demon_health > 1 && health > 1) {
+                        System.out.println("Oh, you didn't kill it\nDemon attacks back!");
+
+                        health -= demon_damage;
+
+                        System.out.println(player + "Health: " + health + "\nDemon Health: " + demon_health);
+
+                        System.out.println("Will you attack? Yes or no?\nYour damage: " + damage);
+                        attack = myObj.nextLine();
+
+                        demon_health -= damage;
+
+                        if (health == 0) {
+                            System.out.println("You have been defeated");
+                            return;
+                        }
+                    }
+
+                    if (demon_health == 0) {
+                        System.out.println("WOW, you could actually kill it!");
+
+                        System.out.println("Now time to pick the next room!\nRoom 1 (Needs 4M)\nRoom 2 (Needs 2M)\nRoom 3 (Needs 1M)");
+                        room = myObj.nextLine();
+
+                        if (room.equalsIgnoreCase("room 1") && movement == 4) {
+                            demon_health = 4;
+                            demon_damage = 3;
 
                             System.out.println("You have entered Room 1, but now you have encountered a DEMON!\nDemon Stats\n" + demon_health + "\n" + demon_damage);
 
@@ -223,87 +472,98 @@ public class Main {
                                     demon_health -= damage;
                                 }
 
-                                if (demon_health == 0) {
-                                    System.out.println("WOW, you could actually kill it!");
-
-                                    System.out.println("Now time to pick the next room!\nRoom 1 (Needs 4M)\nRoom 2 (Needs 2M)\nRoom 3 (Needs 1M)");
-                                    room = myObj.nextLine();
-
-                                    if (room.equalsIgnoreCase("room 1") && movement == 4) {
-                                        demon_health = 4;
-                                        demon_damage = 3;
-
-                                        System.out.println("You have entered Room 1, but now you have encountered a DEMON!\nDemon Stats\n" + demon_health + "\n" + demon_damage);
-
-                                        System.out.println("Will you attack? Yes or no?\nYour damage: " + damage);
-                                        attack = myObj.nextLine();
-
-                                        if (attack.equalsIgnoreCase("yes")) {
-                                            demon_health -= damage;
-
-                                            System.out.println("Nice, you bonked that demon\nDemon Health: " + demon_health);
-
-                                            while (demon_health > 1) {
-                                                System.out.println("Oh, you didn't kill it\nDemon attacks back!");
-
-                                                health -= demon_damage;
-
-                                                System.out.println(player + "Health: " + health + "\nDemon Health: " + demon_health);
-
-                                                System.out.println("Will you attack? Yes or no?\nYour damage: " + damage);
-                                                attack = myObj.nextLine();
-
-                                                demon_health -= damage;
-                                            }
-
-                                            if (demon_health <= 0) {
-                                                System.out.println("You win!");
-                                                return;
-                                            }
-                                        }
-                                    }
-                                }
-
-                                } else if (attack.equalsIgnoreCase("no")) {
-                                    System.out.println("Then why did you start your adventure? Go home!");
+                                if (demon_health <= 0) {
+                                    System.out.println("You win!");
                                     return;
                                 }
-
-                            }
-                            // User picked room 2 and has enough movement
-                            else if (room.equalsIgnoreCase("room 2") && movement == 2) {
-                                demon_health = 3;
-                                demon_damage = 2;
-
-                                System.out.println("You have entered Room 1, but now you have encountered a DEMON!\nDemon Stats\n" + demon_health + "\n" + demon_damage);
-
-                            }
-                            // User picked room 3 and has enough movement
-                            else if (room.equalsIgnoreCase("room 3") && movement == 4) {
-                                demon_health = 2;
-                                demon_damage = 2;
-
-                                System.out.println("You have entered Room 1, but now you have encountered a DEMON!\nDemon Stats\n" + demon_health + "\n" + demon_damage);
-
                             }
                         }
                     }
-                }
 
-                // If user types defeat/Defeat it will quit the game
-                else if (starting.equalsIgnoreCase("defeat".toLowerCase())) {
-                    System.out.println("You're Defeated Before You Even Started!");
-
+                } else if (attack.equalsIgnoreCase("no")) {
+                    System.out.println("Then why did you start your adventure? Go home!");
                     return;
-
-                }
-
-                // Tells the user they put the wrong input so it will send them back
-                else {
-                    System.out.println("You put invalid text!");
                 }
 
             }
-            myObj.close();
+            // User picked room 2 and has enough movement
+            else if (room.equalsIgnoreCase("room 2") && movement == 2) {
+                demon_health = 5;
+                demon_damage = 2;
+
+                System.out.println("You have entered Room 2, but now you have encountered a DEMON!\nDemon Stats\n" + demon_health + "\n" + demon_damage);
+
+                System.out.println("Will you attack? Yes or no?\nYour damage: " + damage);
+                attack = myObj.nextLine();
+
+                if (attack.equalsIgnoreCase("yes")) {
+                    demon_health -= damage;
+
+                    System.out.println("Nice, you bonked that demon\nDemon Health: " + demon_health);
+
+                    while (demon_health > 1) {
+                        System.out.println("Oh, you didn't kill it\nDemon attacks back!");
+
+                        health -= demon_damage;
+
+                        System.out.println(player + "Health: " + health + "\nDemon Health: " + demon_health);
+
+                        System.out.println("Will you attack? Yes or no?\nYour damage: " + damage);
+                        attack = myObj.nextLine();
+
+                        demon_health -= damage;
+                    }
+
+                    if (demon_health == 0) {
+                        System.out.println("WOW, you could actually kill it!");
+
+                        System.out.println("Now time to pick the next room!\nRoom 1 (Needs 4M)\nRoom 2 (Needs 2M)\nRoom 3 (Needs 1M)");
+                        room = myObj.nextLine();
+
+                        if (room.equalsIgnoreCase("room 1") && movement == 4) {
+                            demon_health = 4;
+                            demon_damage = 6;
+
+                            System.out.println("You have entered Room 1, but now you have encountered a DEMON!\nDemon Stats\n" + demon_health + "\n" + demon_damage);
+
+                            System.out.println("Will you attack? Yes or no?\nYour damage: " + damage);
+                            attack = myObj.nextLine();
+
+                            if (attack.equalsIgnoreCase("yes")) {
+                                demon_health -= damage;
+
+                                System.out.println("Nice, you bonked that demon\nDemon Health: " + demon_health);
+
+                                while (demon_health > 1) {
+                                    System.out.println("Oh, you didn't kill it\nDemon attacks back!");
+
+                                    health -= demon_damage;
+
+                                    System.out.println(player + "Health: " + health + "\nDemon Health: " + demon_health);
+
+                                    System.out.println("Will you attack? Yes or no?\nYour damage: " + damage);
+                                    attack = myObj.nextLine();
+
+                                    demon_health -= damage;
+                                }
+
+                                if (demon_health <= 0) {
+                                    System.out.println("You win!");
+                                    return;
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+            // User picked room 3 and has enough movement
+            else if (room.equalsIgnoreCase("room 3") && movement == 4) {
+                demon_health = 2;
+                demon_damage = 2;
+
+                System.out.println("You have entered Room 3, but now you have encountered a DEMON!\nDemon Stats\n" + demon_health + "\n" + demon_damage);
+
+            }
         }
     }
